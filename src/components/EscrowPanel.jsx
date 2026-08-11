@@ -77,7 +77,7 @@ export default function EscrowPanel() {
                   <CheckCircle2 size={14} /> Stage 1: Sponsor Matching (Primary)
                 </div>
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  VC and industry sponsors contribute directly to fund startup testing.
+                  Investors and industry sponsors contribute directly to fund startup testing.
                 </p>
               </div>
 
@@ -117,13 +117,13 @@ export default function EscrowPanel() {
 
         </div>
 
-        {/* Right Column: VC / Sponsor Matching Grant Widget */}
-        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 'var(--radius-md)', padding: '20px' }}>
-          <h4 style={{ fontSize: '1rem', fontWeight: '800', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', color: '#0F172A' }}>
-            <UserCheck size={18} color="var(--accent-blue)" /> VC & Industry Sponsor Grants
+        {/* Right Column: Investor / Sponsor Matching Grant Widget */}
+        <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 'var(--radius-md)', padding: '22px' }}>
+          <h4 style={{ fontSize: '1rem', fontWeight: '800', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px', color: '#0F172A' }}>
+            <UserCheck size={18} color="var(--accent-blue)" /> Investor & Industry Sponsor Grants
           </h4>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '16px' }}>
-            VCs and industry sponsors contribute directly to fund startup bench testing. This is the primary funding mechanism.
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.4 }}>
+            Investors and industry sponsors contribute directly to fund startup bench testing. This is the primary funding mechanism.
           </p>
 
           {/* Existing Sponsors List */}

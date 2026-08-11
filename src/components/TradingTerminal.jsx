@@ -178,18 +178,18 @@ export default function TradingTerminal() {
               </div>
             </div>
 
-            {/* VC Pro Teaser Banner */}
+            {/* Investor Pro Teaser Banner */}
             <div style={{ background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(37, 99, 235, 0.06) 100%)', border: '1px solid rgba(124, 58, 237, 0.25)', borderRadius: '8px', padding: '12px 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
               <div>
                 <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--accent-purple)', display: 'block' }}>
                   Need raw electrochemistry telemetry?
                 </span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  Detailed ion selectivity (1.77M×), Faradaic efficiency data, and ICP-OES lab certificates are available on the VC Pro Terminal.
+                  Detailed ion selectivity (1.77M×), Faradaic efficiency data, and ICP-OES lab certificates are available on the Investor Pro Terminal.
                 </span>
               </div>
               <button onClick={() => setIsVcPro(true)} className="btn btn-secondary" style={{ padding: '6px 12px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
-                VC Pro View →
+                Investor Pro View →
               </button>
             </div>
 

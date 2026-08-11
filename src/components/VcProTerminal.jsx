@@ -17,7 +17,7 @@ export default function VcProTerminal() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: '#0F172A' }}>
-                VC Pro Intelligence Terminal
+                Investor Pro Intelligence Terminal
               </h2>
               <span className="badge badge-purple">Core Product</span>
             </div>
@@ -28,17 +28,17 @@ export default function VcProTerminal() {
         </div>
 
         <button onClick={() => setIsVcPro(false)} className="btn btn-secondary" style={{ fontSize: '0.8rem' }}>
-          Exit VC Terminal
+          Exit Investor Terminal
         </button>
       </div>
 
       {/* Value Proposition & Subscription Tiers */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
         
-        {/* VC Pro Tier */}
+        {/* Investor Pro Tier */}
         <div style={{ background: '#FFFFFF', border: '2px solid rgba(37, 99, 235, 0.3)', borderRadius: 'var(--radius-md)', padding: '18px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-            <span style={{ fontSize: '1rem', fontWeight: '800', color: 'var(--accent-blue)' }}>VC Pro</span>
+            <span style={{ fontSize: '1rem', fontWeight: '800', color: 'var(--accent-blue)' }}>Investor Pro</span>
             <span style={{ fontSize: '1.1rem', fontWeight: '800', fontFamily: 'var(--font-mono)', color: 'var(--accent-blue)' }}>$399/mo</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
@@ -70,7 +70,7 @@ export default function VcProTerminal() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ color: 'var(--accent-emerald)', fontWeight: '700' }}>✓</span>
-              <span>Everything in VC Pro</span>
+              <span>Everything in Investor Pro</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ color: 'var(--accent-emerald)', fontWeight: '700' }}>✓</span>

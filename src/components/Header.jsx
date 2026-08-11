@@ -71,15 +71,15 @@ export default function Header() {
             </div>
           </div>
 
-          {/* VC Pro Toggle */}
+          {/* Investor Pro Toggle */}
           <button 
             onClick={() => setIsVcPro(!isVcPro)}
             className={`btn ${isVcPro ? 'btn-primary' : 'btn-secondary'}`}
             style={{ fontSize: '0.8rem', padding: '8px 12px' }}
-            title="Toggle Institutional VC Intelligence View"
+            title="Toggle Institutional Investor Intelligence View"
           >
             <Briefcase size={15} />
-            {isVcPro ? 'VC Pro Active' : 'VC Terminal'}
+            {isVcPro ? 'Investor Pro Active' : 'Investor Terminal'}
           </button>
 
           {/* Startup Launch Button */}

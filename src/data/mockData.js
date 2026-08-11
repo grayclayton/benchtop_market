@@ -75,18 +75,13 @@ export const INITIAL_STARTUPS = [
         { gate: "Recovered Li Signal", measured: "2,707.1 μg/L", target: ">= 20.0 μg/L", pass: true }
       ]
     },
-    vcIntel: {
-      score: 99,
-      riskRating: "LOW (Proof-Grade Passed)",
-      leadInvestor: "H2 Gen / Modular Array Lithium",
-      founderStakedCollateral: 5000,
-      sentimentIndex: 96,
-      tags: [
-        "WSEI Chemistry",
-        "Direct Lithium Extraction",
-        "100cm² 200-Cycle Gate",
-        "Synthetic Seawater"
-      ],
+    investorIntel: {
+      score: 94,
+      riskRating: "LOW-MEDIUM",
+      leadInvestor: "Stealth Energy Angel Syndicate",
+      founderStakedCollateral: 2500,
+      sentimentIndex: 88,
+      tags: ["Clean Tech / DLE", "Wave Energy", "7/7 Gates Passed", "Patent Pending"],
       team: {
         founder: "Dr. Clayton Gray",
         role: "Founder & Chief Electrochemist",
@@ -106,6 +101,6 @@ export const PLATFORM_STATS = {
   testingFundTotal: 28500,
   verifiedMilestonesCount: 1,
   activeAccreditedLabs: 1,
-  vcSubscribers: 86,
-  vcMonthlyRevenue: 34314 // 86 subscribers × $399/mo
+  investorSubscribers: 86,
+  investorMonthlyRevenue: 34314 // 86 subscribers × $399/mo
 };

@@ -13,7 +13,7 @@ export default function HeroBanner() {
               <FlaskConical size={12} /> Deep Tech Milestone Prediction
             </span>
             <span className="badge badge-purple">
-              <ShieldCheck size={12} /> VC Deal Flow Intelligence
+              <ShieldCheck size={12} /> Investor Deal Flow Intelligence
             </span>
           </div>
 
@@ -22,7 +22,7 @@ export default function HeroBanner() {
           </h2>
 
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
-            Traders generate live crowd-belief scores on physical startup milestones. <strong style={{ color: '#0F172A' }}>VC subscribers get real-time intelligence</strong>, and sponsor matching plus trading escrow fund the bench testing that resolves every market.
+            Traders generate live crowd-belief scores on physical startup milestones. <strong style={{ color: '#0F172A' }}>Investor subscribers get real-time intelligence</strong>, and sponsor matching plus trading escrow fund the bench testing that resolves every market.
           </p>
 
           {/* Key Value Pill Highlights */}
@@ -37,7 +37,7 @@ export default function HeroBanner() {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-main)' }}>
               <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(124, 58, 237, 0.15)', color: 'var(--accent-purple)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</div>
-              <span><strong>VC Intelligence & Sponsor Matching</strong></span>
+              <span><strong>Investor Intelligence & Sponsor Matching</strong></span>
             </div>
           </div>
         </div>
@@ -80,11 +80,11 @@ export default function HeroBanner() {
               <span style={{ fontSize: '0.9rem', fontWeight: '800', fontFamily: 'var(--font-mono)', color: 'var(--accent-purple)' }}>0.5%</span>
             </div>
 
-            {/* VC Pro Subscriptions */}
+            {/* Investor Pro Subscriptions */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(37, 99, 235, 0.08)', padding: '8px 12px', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.25)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Briefcase size={16} color="var(--accent-blue)" />
-                <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--accent-blue)' }}>VC Pro Subscriptions</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--accent-blue)' }}>Investor Pro Subscriptions</span>
               </div>
               <span style={{ fontSize: '0.9rem', fontWeight: '800', fontFamily: 'var(--font-mono)', color: 'var(--accent-blue)' }}>$399/mo</span>
             </div>

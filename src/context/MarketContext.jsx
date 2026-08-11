@@ -353,6 +353,8 @@ export function MarketProvider({ children }) {
       activeStartup,
       isVcPro,
       setIsVcPro,
+      isInvestorPro: isVcPro,
+      setIsInvestorPro: setIsVcPro,
       inspectingCertificate,
       setInspectingCertificate,
       isCreateModalOpen,
