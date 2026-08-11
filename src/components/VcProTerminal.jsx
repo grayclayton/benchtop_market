@@ -93,7 +93,14 @@ export default function VcProTerminal() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '20px' }}>
         {startups.map(startup => {
           const yesProb = Math.round(startup.market.yesPrice * 100);
-          const vc = startup.vcIntel;
+          const vc = startup.investorIntel || startup.vcIntel || {
+            score: 90,
+            riskRating: 'MEDIUM',
+            leadInvestor: 'Stealth Angels',
+            founderStakedCollateral: 2500,
+            sentimentIndex: 75,
+            tags: ['Early Milestone']
+          };
 
           return (
             <div key={startup.id} style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 'var(--radius-md)', padding: '18px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

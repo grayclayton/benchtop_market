@@ -181,6 +181,14 @@ export const INITIAL_STARTUPS = [
         founderEmail: "clayton@benchtopmarket.org",
         linkedin: "https://linkedin.com/in/clayton-gray-dlt"
       }
+    },
+    vcIntel: {
+      score: 92,
+      riskRating: "LOW-MEDIUM",
+      leadInvestor: "Antigravity & Benchtop Founders",
+      founderStakedCollateral: 5000,
+      sentimentIndex: 82,
+      tags: ["Fintech / Protocol", "Prediction Market", "Phase 1 Growth", "DeSci / ReFi"]
     }
   }
 ];

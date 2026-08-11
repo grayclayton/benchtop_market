@@ -3,7 +3,7 @@ import { INITIAL_STARTUPS, PLATFORM_STATS } from '../data/mockData';
 
 const MarketContext = createContext();
 
-const STORAGE_KEY_STARTUPS = 'benchtop_startups_v4';
+const STORAGE_KEY_STARTUPS = 'benchtop_startups_v5';
 const STORAGE_KEY_USER = 'benchtop_user_v1';
 
 export function MarketProvider({ children }) {
