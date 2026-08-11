@@ -149,6 +149,23 @@ export default function VcProTerminal() {
                   </div>
                 </div>
 
+                {/* Founder & Team Dossier (VC Pro Exclusive) */}
+                {vc.team && (
+                  <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '10px 12px', marginBottom: '14px', fontSize: '0.75rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                      <span style={{ fontWeight: '700', color: '#0F172A' }}>👤 {vc.team.founder} ({vc.team.role})</span>
+                      <span style={{ fontSize: '0.68rem', color: 'var(--accent-blue)', fontWeight: '600' }}>{vc.team.teamSize}</span>
+                    </div>
+                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: 1.3 }}>
+                      {vc.team.bio}
+                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', fontSize: '0.7rem', borderTop: '1px solid #E2E8F0', paddingTop: '6px' }}>
+                      <div><strong style={{ color: 'var(--accent-purple)' }}>📜 Patents:</strong> {vc.team.patentsFiled.join(', ')}</div>
+                      <div><strong style={{ color: 'var(--accent-emerald)' }}>💰 Open Round:</strong> {vc.team.openRound}</div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Deal Tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
                   {vc.tags.map((tag, i) => (
@@ -169,11 +186,11 @@ export default function VcProTerminal() {
                   View Market
                 </button>
                 <button
-                  onClick={() => alert(`Connecting with founder of ${startup.name} via Benchtop VC Portal...`)}
+                  onClick={() => alert(`Direct Founder Message Channel initialized for ${vc.team?.founder || startup.name} (${vc.team?.founderEmail || 'contact@startup.com'}). Sending VC inquiry...`)}
                   className="btn btn-primary"
-                  style={{ flex: 1, fontSize: '0.75rem', padding: '6px' }}
+                  style={{ flex: 1, fontSize: '0.75rem', padding: '6px', background: 'var(--gradient-brand)' }}
                 >
-                  <Mail size={13} /> Request Intro
+                  <Mail size={13} /> Message Founder
                 </button>
               </div>
 

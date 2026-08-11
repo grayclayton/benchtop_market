@@ -44,8 +44,12 @@ To optimize market liquidity while driving institutional SaaS revenue ($399–$7
 
 ### Tier 2: VC Pro Terminal (Paid Subscription)
 * **Target Audience**: Hardware VC investors, technical due diligence partners, family offices.
-* **Goal**: Provide institutional-grade verification and defensible evidence for investment decisions.
+* **Goal**: Provide institutional-grade verification, founder team intelligence, and direct deal-sourcing access.
 * **Key UI Elements**:
+  * **Founder & Team Dossier**: Founder bio (`Dr. Clayton Gray`), technical background, team size, and academic/lab pedigree.
+  * **Patent & IP Portfolio**: Summary of filed patents (e.g. *WSEI Wave-Synchronized Intercalation Architecture*, *Self-Cleaning Conducting Graphene Skin*).
+  * **Open Fundraising Round Data**: Target valuation, open round status ($1.5M Seed Target — $500k Soft Committed).
+  * **Direct VC-to-Founder Messaging Channel**: One-click `[ Message Founder ]` action to initiate direct investor communications.
   * **Gate-Level Telemetry Table**:
     | Gate # | Benchmark Parameter | Measured Value | Target Threshold | Status |
     |---|---|---|---|---|

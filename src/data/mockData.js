@@ -86,7 +86,17 @@ export const INITIAL_STARTUPS = [
         "Direct Lithium Extraction",
         "100cm² 200-Cycle Gate",
         "Synthetic Seawater"
-      ]
+      ],
+      team: {
+        founder: "Dr. Clayton Gray",
+        role: "Founder & Chief Electrochemist",
+        bio: "Former marine electrochemistry researcher. Specialist in wave-synchronized intercalation & DLE fluid dynamics.",
+        teamSize: "4 Full-Time Engineers",
+        patentsFiled: ["WSEI Wave-Synchronized Intercalation Architecture", "Self-Cleaning Conducting Graphene Skin"],
+        openRound: "Seed Round ($1.5M Target — $500k Soft Committed)",
+        founderEmail: "clayton@wsei-lithium.com",
+        linkedin: "https://linkedin.com/in/clayton-gray-dlt"
+      }
     }
   }
 ];
