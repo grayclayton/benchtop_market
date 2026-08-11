@@ -82,20 +82,21 @@ $$P_{payout} = V_{total} \times (1 - r_{take}) = V_{total} \times 0.97$$
 
 A 1,000-iteration Monte Carlo simulation was executed across 5 candidate economic models (see [economic_simulation.py](file:///c:/Users/clayg/source/repos/benchtop_market/economics/economic_simulation.py)). 
 
-### Comparative Results Summary
+### Comparative Results Summary (1,000 Monte Carlo Iterations per Scenario)
 
-| Scenario Name | Startup Fee | VC Pro Fee | Active Startups | Monthly Volume | Platform MRR | Annual ARR | Monthly Lab Grant Funding |
+| Scenario Name | Startup Fee | Investor Pro Fee | Active Startups | Monthly Volume | Platform MRR | Annual ARR | Lab Benchmark Funding Completion Rate |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1. Baseline Dual-SaaS** | $149/mo | $299/mo | 100 | $19.3M | $126,521 | $1,518,252 | $483,355 |
-| **2. Investor-Only Freemium** ⭐ | **$0/mo** | **$399/mo** | **350** | **$64.8M** | **$349,965** | **$4,199,580** | **$1,620,150** |
-| **3. Success-Fee Model** | $0 + 3% fee | $299/mo | 300 | $55.2M | $297,262 | $3,567,143 | $1,380,312 |
-| **4. High-Volume Low-Friction** | $0/mo | $199/mo | 400 | $89.7M | $239,252 | $2,871,024 | $1,794,616 |
-| **5. Tiered Freemium Model** | $0 / $199 feat. | $299 / $799 inst. | 320 | $58.3M | $333,788 | $4,005,458 | $1,456,861 |
+| **1. Baseline Dual-SaaS** | $149/mo | $299/mo | 100 | $18.1M | $120,583 | $1,446,995 | 4.9% (Escrow Only) |
+| **2. Investor Freemium** | $0/mo | $399/mo | 350 | $65.7M | $354,463 | $4,253,558 | 6.1% (Escrow Only) |
+| **3. Success-Fee Model** | $0 + 3% fee | $299/mo | 300 | $54.6M | $293,708 | $3,524,497 | 5.2% (Escrow Only) |
+| **4. Tiered Freemium Model** | $0 / $199 feat. | $299 / $799 inst. | 320 | $60.5M | $344,999 | $4,139,989 | 5.0% (Escrow Only) |
+| **5. Path A+C Hybrid** ⭐ | **$0/mo** | **$399 / $799 inst.** | **350** | **$61.7M** | **$363,726** | **$4,364,709** | **48.3% – 81.3% (Sponsor + Trade Escrow)** |
 
 ### Key Empirical Findings:
-1. **2.7x Revenue Growth**: Removing monthly fees for startups increases platform ARR from **$1.52M to $4.20M**. Zero startup friction scales active listing campaigns from 100 to 350+, driving **$64.8M/mo** in trading volume.
-2. **Dominant Volume Cut**: Platform trading fees (0.5%) generate over **85% of total MRR** ($324,000/mo) in the Freemium model, dwarf SaaS subscriptions.
-3. **3.3x Lab Funding Output**: Lab grant funding to accredited test facilities scales from **$483k/mo to $1.62M/mo**, maximizing non-dilutive research funding.
+
+1. **Sponsor Grants Solve the Liquidity Gap**: A 2.5% trade volume cut alone only funds ~5% of $20k lab test targets. Adding direct Sponsor Matching Grants ($12.5k avg match) jumps the benchmark completion rate to **48.3% – 81.3%**.
+2. **2.9x ARR Growth**: Zero startup listing fees scale active listing campaigns from 100 to 350+, driving **$61.7M/mo** in volume and increasing annual platform ARR from **$1.45M to $4.36M**.
+3. **High-Margin Investor SaaS**: Investor Pro ($399/mo) and Institutional API ($799/mo) subscriptions generate **$55,000+/mo** in predictable subscription MRR.
 
 ---
 
