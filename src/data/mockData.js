@@ -93,6 +93,95 @@ export const INITIAL_STARTUPS = [
         linkedin: "https://linkedin.com/in/clayton-gray-dlt"
       }
     }
+  },
+  {
+    id: "benchtop-market-platform",
+    name: "Benchtop Market Protocol",
+    ticker: "BENCH",
+    category: "Fintech / Protocol",
+    tagline: "Crowdsourced due diligence platform funding deep tech lab milestones.",
+    story: {
+      headline: "Benchtop Market",
+      subtitle: "Can a prediction market predict its own platform growth?",
+      problem: "Deep tech startups face a 3-year 'Valley of Death' funding lab benchmarks, while investors lack verified crowdsourced due diligence signals.",
+      solution: "Benchtop Market monetizes speculative trading volume (2.5% escrow + 0.5% protocol fee) to fund accredited lab testing, while selling $399/mo Investor Pro intelligence subscriptions.",
+      novelty: "The first prediction market where trade volume directly funds the lab benchmark that resolves the market, paired with an institutional deal-sourcing terminal.",
+      keyStats: [
+        { label: "Target Platform ARR", value: "$4.36M" },
+        { label: "Startup Fee", value: "$0 Freemium" },
+        { label: "Investor Pro Tier", value: "$399 / mo" },
+        { label: "Phase 1 Goal", value: "5 External Startups" }
+      ],
+      sourceRepo: "https://github.com/grayclayton/benchtop_market"
+    },
+    logoBg: "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
+    milestone: {
+      title: "Onboard First 5 External Deep-Tech Startups",
+      simpleMetric: "Onboard 5 Verified Hardware/Clean-Tech Startups by Q4 2026",
+      technicalMetric: "5 External Startup Onboardings + 10 Investor Pro Subscribers ($3,990 MRR)",
+      traderSummary: "Will Benchtop Market successfully onboard 5 external deep-tech startups and reach $3.9k MRR by Q4 2026?",
+      description: "Platform growth milestone: Onboard 5 verified external hardware/clean-tech startups onto Benchtop Market and convert 10 paying Investor Pro subscribers.",
+      targetMetric: "5 External Startups & 10 Investor Subscribers",
+      deadline: "2026-12-31",
+      stage: "Active Execution"
+    },
+    testingLab: {
+      name: "Benchtop Protocol Governance & Audit Committee",
+      accreditation: "On-Chain Smart Contract Audit & Investor Advisory Board",
+      location: "https://github.com/grayclayton/benchtop_market",
+      escrowTarget: 20000,
+      escrowCollected: 14500,
+      intakeReleased: false,
+      finalReleased: false,
+      matchingSponsors: [
+        { name: "Clean Tech Founder Syndicate", amount: 7500 },
+        { name: "Web3 Science Fund", amount: 7000 }
+      ]
+    },
+    market: {
+      yesPrice: 0.78,
+      noPrice: 0.22,
+      totalVolume: 580000,
+      totalTrades: 1240,
+      status: "ACTIVE",
+      history: [
+        { time: "Launch", probability: 50 },
+        { time: "Week 2", probability: 62 },
+        { time: "Week 4", probability: 70 },
+        { time: "Week 6", probability: 78 }
+      ]
+    },
+    certificate: {
+      hash: "0x8f7e6d5c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e",
+      ipfsUri: "ipfs://QmBenchtopMarketPlatformPhase1Milestone",
+      verificationStatus: "IN_TESTING",
+      livenessDaysRemaining: 14,
+      telemetry: [
+        { gate: "GitHub Repository Live", measured: "Pushed (23 files)", target: "Public & Verified", pass: true },
+        { gate: "Monte Carlo ARR Model", measured: "$4.36M ARR Proved", target: "ARR > $1.0M", pass: true },
+        { gate: "WSEI Lighthouse Campaign", measured: "Active (7/7 Gates Passed)", target: "1 Active Campaign", pass: true },
+        { gate: "External Startups Onboarded", measured: "1 of 5 Onboarded", target: "5 Startups", pass: false },
+        { gate: "Investor Pro Subscribers", measured: "2 of 10 Converted", target: "10 Subscribers", pass: false }
+      ]
+    },
+    investorIntel: {
+      score: 92,
+      riskRating: "LOW-MEDIUM",
+      leadInvestor: "Antigravity & Benchtop Founders",
+      founderStakedCollateral: 5000,
+      sentimentIndex: 82,
+      tags: ["Fintech / Protocol", "Prediction Market", "Phase 1 Growth", "DeSci / ReFi"],
+      team: {
+        founder: "Clayton Gray",
+        role: "Platform Creator & Lead Architect",
+        bio: "Creator of Benchtop Market & WSEI Lithium Extraction. Architect of crowdsourced due diligence and lab escrow protocols.",
+        teamSize: "Core Platform Team",
+        patentsFiled: ["Direct Grant Escrow Volume Cut Protocol", "Tiered Due Diligence Telemetry Access"],
+        openRound: "Platform Pre-Seed ($500k Target)",
+        founderEmail: "clayton@benchtopmarket.org",
+        linkedin: "https://linkedin.com/in/clayton-gray-dlt"
+      }
+    }
   }
 ];
 

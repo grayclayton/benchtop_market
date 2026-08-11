@@ -5,6 +5,7 @@ import { Layers, BatteryCharging, Dna, Bot, Cpu, Zap } from 'lucide-react';
 const CATEGORIES = [
   { id: 'ALL', label: 'All Sectors', icon: Layers },
   { id: 'Clean Tech / DLE', label: 'Clean Tech / DLE', icon: Zap },
+  { id: 'Fintech / Protocol', label: 'Fintech / Protocol', icon: Cpu },
   { id: 'Battery Tech', label: 'Battery Tech', icon: BatteryCharging },
   { id: 'Synthetic Biotech', label: 'Biotech', icon: Dna },
   { id: 'Robotics & AI', label: 'Robotics', icon: Bot },
