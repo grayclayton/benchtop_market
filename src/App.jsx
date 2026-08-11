@@ -45,7 +45,7 @@ function MainAppContent() {
             {/* Category Filter Pills */}
             <div style={{ marginTop: '36px', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: '#FFF' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: '#0F172A' }}>
                   Featured Deep Tech Milestone Markets
                 </h3>
                 <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)' }}>

@@ -4,7 +4,7 @@ import OddsChart from './OddsChart';
 import { TrendingUp, ShieldCheck, DollarSign, Award, AlertCircle, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export default function TradingTerminal() {
-  const { activeStartup, userState, executeTrade, setInspectingCertificate } = useMarket();
+  const { activeStartup, userState, executeTrade, setInspectingCertificate, setIsVcPro } = useMarket();
   
   const [selectedOutcome, setSelectedOutcome] = useState('YES');
   const [tradeAmount, setTradeAmount] = useState('100');
