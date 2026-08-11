@@ -21,11 +21,14 @@ export const INITIAL_STARTUPS = [
     },
     logoBg: "linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%)",
     milestone: {
-      title: "WSEI Beaker-Cell 100 cm² 200-Cycle Proof Gate",
-      description: "Demonstrate effective Li/Na selectivity ≥ 1.0e5x, Li Faradaic efficiency ≥ 90%, Li molar purity ≥ 90%, Li enrichment ≥ 10x over feed, and Mn dissolution ≤ 0.10 μmol/m²-cycle in synthetic seawater.",
-      targetMetric: "1.77e6x Li/Na Selectivity & 99.25% Faradaic Efficiency",
-      deadline: "2026-11-30",
-      stage: "Data Reduction PASSED",
+      title: "WSEI Beaker-Cell 200-Cycle Proof Gate",
+      simpleMetric: "Pass All 7 Lab Quality & Safety Gates (Li Purity, Zero Toxic Byproducts)",
+      technicalMetric: "Li/Na Selectivity ≥ 1e5x, Faradaic Efficiency ≥ 90%, Mn dissolution ≤ 0.10 µmol/m²",
+      traderSummary: "Will WSEI's 200-cycle bench test meet all lab safety, lithium purity, and extraction efficiency standards?",
+      description: "100 cm² beaker-cell electrochemical lithium extraction benchmark using synthetic seawater. Measures ion selectivity, energy efficiency, structural stability, and safety.",
+      targetMetric: "100% Pass across 7 Lab Gates",
+      deadline: "2026-09-30",
+      stage: "Lab Telemetry Verification",
       testDirectory: "C:\\Users\\clayg\\source\\repos\\h2_gen\\modular_array_lithium\\bench_test"
     },
     testingLab: {

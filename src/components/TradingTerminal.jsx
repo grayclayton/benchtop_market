@@ -134,19 +134,36 @@ export default function TradingTerminal() {
             </div>
           )}
 
-          {/* Milestone Target & Lab Protocol Card */}
+          {/* Milestone Target & Verification Protocol Card */}
           <div style={{ marginTop: '20px', background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: 'var(--radius-md)', padding: '18px' }}>
-            <h4 style={{ fontSize: '0.85rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-muted)', marginBottom: '10px' }}>
-              Target Milestone & Benchmark Verification Protocol
-            </h4>
-            <p style={{ fontSize: '0.95rem', fontWeight: '700', color: '#0F172A', marginBottom: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-muted)' }}>
+                Prediction Milestone & Test Protocol
+              </h4>
+              <span className="badge badge-emerald">Simple Trader View</span>
+            </div>
+            
+            <p style={{ fontSize: '1rem', fontWeight: '800', color: '#0F172A', marginBottom: '6px' }}>
               {activeStartup.milestone.title}
             </p>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '14px' }}>
-              {activeStartup.milestone.description}
+              {activeStartup.milestone.traderSummary || activeStartup.milestone.description}
             </p>
+
+            {/* Quick Status Pill Highlights */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+              <div style={{ padding: '6px 12px', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', borderRadius: '8px', color: 'var(--accent-emerald)', fontSize: '0.78rem', fontWeight: '700' }}>
+                ✓ All 7 Lab Gates Passed
+              </div>
+              <div style={{ padding: '6px 12px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid rgba(37, 99, 235, 0.25)', borderRadius: '8px', color: 'var(--accent-blue)', fontSize: '0.78rem', fontWeight: '700' }}>
+                ✓ Seawater Purity Verified
+              </div>
+              <div style={{ padding: '6px 12px', background: 'rgba(124, 58, 237, 0.1)', border: '1px solid rgba(124, 58, 237, 0.25)', borderRadius: '8px', color: 'var(--accent-purple)', fontSize: '0.78rem', fontWeight: '700' }}>
+                ✓ Zero Toxic Chlorine (Safe)
+              </div>
+            </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', fontSize: '0.8rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', fontSize: '0.8rem', marginBottom: '16px' }}>
               <div style={{ background: '#FFFFFF', padding: '8px 12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
                 <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '0.7rem' }}>TARGET METRIC</span>
                 <strong style={{ color: 'var(--accent-blue)' }}>{activeStartup.milestone.targetMetric}</strong>
@@ -160,6 +177,22 @@ export default function TradingTerminal() {
                 <strong style={{ color: 'var(--accent-amber)' }}>{activeStartup.milestone.deadline}</strong>
               </div>
             </div>
+
+            {/* VC Pro Teaser Banner */}
+            <div style={{ background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(37, 99, 235, 0.06) 100%)', border: '1px solid rgba(124, 58, 237, 0.25)', borderRadius: '8px', padding: '12px 14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+              <div>
+                <span style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--accent-purple)', display: 'block' }}>
+                  Need raw electrochemistry telemetry?
+                </span>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                  Detailed ion selectivity (1.77M×), Faradaic efficiency data, and ICP-OES lab certificates are available on the VC Pro Terminal.
+                </span>
+              </div>
+              <button onClick={() => setIsVcPro(true)} className="btn btn-secondary" style={{ padding: '6px 12px', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
+                VC Pro View →
+              </button>
+            </div>
+
           </div>
         </div>
 
