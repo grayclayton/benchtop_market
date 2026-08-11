@@ -28,10 +28,11 @@ Benchtop Market is a prediction market and milestone-funding platform engineered
   • $5,000 Predictor Competition           • Activate Direct Founder Messaging     • Reach $4.36M Platform ARR
 ```
 
-### Phase 1: Lighthouse Pilot (Months 1–3)
-- **Anchor Campaign**: Use **The Lithium Eel** (WSEI Lithium Extraction) with its real 7-gate pass/fail bench test data as the primary lighthouse case.
-- **Paper Trading Competition**: Host a 30-day paper-trading tournament with a $5,000 sponsored cash prize pool for top-ranking technical predictors.
-- **Cohort Onboarding**: Onboard 5 high-profile seed-stage startups across DLE, solid-state batteries, robotics, and synthetic biotech.
+### Phase 1: Dogfooding Lighthouse Pilot (Months 1–3)
+- **Lighthouse Campaign #1 (WSEI Lithium)**: Feature **WSEI Lithium Extraction** as Startup #1 on the platform. Display the completed 100 cm² beaker-cell proof gate (Passed 7/7) as historical proof, and launch the **Flow-Cell Scale-Up Array Test ($20,000 target)** as the active funding campaign.
+- **Funding Your Own Next Lab Test**: The 2.5% trade escrow + sponsor match directly funds WSEI's real-world lab testing budget, proving to future startups and investors that Benchtop Market actually works.
+- **Paper Trading Tournament**: Host a 30-day paper-trading tournament with a $5,000 sponsored cash prize pool for top-ranking technical predictors.
+- **Cohort Onboarding**: Onboard 5 high-profile seed-stage startups across DLE, solid-state batteries, robotics, and synthetic biotech following the WSEI blueprint.
 
 ### Phase 2: Sponsor & Accredited Lab Integration (Months 4–6)
 - **Accredited Lab Network**: Partner with 5 independent testing laboratories (SGS, TÜV SÜD, NREL, university core facilities) to establish standard oracle intake protocols.
