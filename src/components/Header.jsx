@@ -6,6 +6,8 @@ export default function Header() {
   const { 
     userState, 
     platformStats, 
+    activeTab,
+    setActiveTab,
     isVcPro, 
     setIsVcPro, 
     setIsCreateModalOpen,
@@ -33,6 +35,57 @@ export default function Header() {
             </p>
           </div>
         </div>
+
+        {/* Navigation Tabs */}
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#F8FAFC', padding: '4px', borderRadius: 'var(--radius-full)', border: '1px solid #E2E8F0' }}>
+          <button
+            onClick={() => setActiveTab('HOME')}
+            className={`btn ${activeTab === 'HOME' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-full)',
+              border: activeTab === 'HOME' ? 'none' : 'transparent',
+              background: activeTab === 'HOME' ? 'var(--gradient-brand)' : 'transparent',
+              color: activeTab === 'HOME' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'HOME' ? '700' : '600'
+            }}
+          >
+            Home & Mission
+          </button>
+
+          <button
+            onClick={() => setActiveTab('BETTING')}
+            className={`btn ${activeTab === 'BETTING' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-full)',
+              border: activeTab === 'BETTING' ? 'none' : 'transparent',
+              background: activeTab === 'BETTING' ? 'var(--gradient-brand)' : 'transparent',
+              color: activeTab === 'BETTING' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'BETTING' ? '700' : '600'
+            }}
+          >
+            <TrendingUp size={14} /> Prediction Markets
+          </button>
+
+          <button
+            onClick={() => setActiveTab('INVESTOR')}
+            className={`btn ${activeTab === 'INVESTOR' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-full)',
+              border: activeTab === 'INVESTOR' ? 'none' : 'transparent',
+              background: activeTab === 'INVESTOR' ? 'linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)' : 'transparent',
+              color: activeTab === 'INVESTOR' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'INVESTOR' ? '700' : '600'
+            }}
+          >
+            <Briefcase size={14} /> Investor Pro
+          </button>
+        </nav>
 
         {/* Live Protocol Telemetry Counter */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: '#F8FAFC', padding: '8px 16px', borderRadius: 'var(--radius-full)', border: '1px solid #E2E8F0' }}>

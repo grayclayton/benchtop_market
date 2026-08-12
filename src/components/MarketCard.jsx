@@ -3,7 +3,7 @@ import { useMarket } from '../context/MarketContext';
 import { ShieldCheck, Award, ArrowRight } from 'lucide-react';
 
 export default function MarketCard({ startup }) {
-  const { selectedStartupId, setSelectedStartupId, setInspectingCertificate } = useMarket();
+  const { selectedStartupId, setSelectedStartupId, setInspectingCertificate, setActiveTab } = useMarket();
 
   const isSelected = selectedStartupId === startup.id;
   const escrowPercent = Math.min(100, Math.round((startup.testingLab.escrowCollected / startup.testingLab.escrowTarget) * 100));
@@ -11,10 +11,15 @@ export default function MarketCard({ startup }) {
   const yesProbability = Math.round(startup.market.yesPrice * 100);
   const noProbability = Math.round(startup.market.noPrice * 100);
 
+  const handleCardClick = () => {
+    setSelectedStartupId(startup.id);
+    setActiveTab('BETTING');
+  };
+
   return (
     <div 
       className={`glass-card-interactive ${isSelected ? 'selected' : ''}`}
-      onClick={() => setSelectedStartupId(startup.id)}
+      onClick={handleCardClick}
       style={{
         padding: '20px',
         display: 'flex',
@@ -126,7 +131,7 @@ export default function MarketCard({ startup }) {
               <ShieldCheck size={13} color="var(--accent-blue)" /> Certificate
             </button>
             <button 
-              onClick={() => setSelectedStartupId(startup.id)}
+              onClick={(e) => { e.stopPropagation(); handleCardClick(); }}
               className="btn btn-primary" 
               style={{ fontSize: '0.725rem', padding: '5px 10px' }}
             >

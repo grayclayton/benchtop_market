@@ -6,13 +6,14 @@ import CategoryFilter from './components/CategoryFilter';
 import MarketCard from './components/MarketCard';
 import TradingTerminal from './components/TradingTerminal';
 import EscrowPanel from './components/EscrowPanel';
+import HomePage from './components/HomePage';
 import VcProTerminal from './components/VcProTerminal';
 import OracleInspectorModal from './components/OracleInspectorModal';
 import CreateCampaignModal from './components/CreateCampaignModal';
 import { FlaskConical, ShieldCheck, TrendingUp, Award, Layers } from 'lucide-react';
 
 function MainAppContent() {
-  const { startups, activeCategory, isVcPro } = useMarket();
+  const { startups, activeCategory, activeTab } = useMarket();
 
   // Filter startups by category
   const filteredStartups = startups.filter(s => {
@@ -29,9 +30,11 @@ function MainAppContent() {
       {/* Main Body */}
       <main style={{ flex: 1, maxWidth: '1400px', margin: '0 auto', width: '100%', padding: '24px' }}>
         
-        {isVcPro ? (
-          <VcProTerminal />
-        ) : (
+        {activeTab === 'HOME' && <HomePage />}
+
+        {activeTab === 'INVESTOR' && <VcProTerminal />}
+
+        {activeTab === 'BETTING' && (
           <>
             {/* Hero Explainer Banner */}
             <HeroBanner />

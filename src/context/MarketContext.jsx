@@ -41,9 +41,14 @@ export function MarketProvider({ children }) {
   // Active view states
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [selectedStartupId, setSelectedStartupId] = useState('wsei-lithium-bench-01');
-  const [isVcPro, setIsVcPro] = useState(false);
+  const [activeTab, setActiveTab] = useState('HOME'); // 'HOME', 'BETTING', 'INVESTOR'
   const [inspectingCertificate, setInspectingCertificate] = useState(null);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+
+  const isVcPro = activeTab === 'INVESTOR';
+  const setIsVcPro = (val) => {
+    setActiveTab(val ? 'INVESTOR' : 'BETTING');
+  };
 
   // Persist to LocalStorage
   useEffect(() => {
@@ -351,6 +356,8 @@ export function MarketProvider({ children }) {
       selectedStartupId,
       setSelectedStartupId,
       activeStartup,
+      activeTab,
+      setActiveTab,
       isVcPro,
       setIsVcPro,
       isInvestorPro: isVcPro,
