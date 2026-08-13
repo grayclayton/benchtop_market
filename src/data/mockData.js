@@ -75,6 +75,17 @@ export const INITIAL_STARTUPS = [
         { gate: "Recovered Li Signal", measured: "2,707.1 μg/L", target: ">= 20.0 μg/L", pass: true }
       ]
     },
+    founderVerification: {
+      status: "VERIFIED_FOUNDER",
+      level: "LEVEL_3_LAB_PASSED",
+      tierLabel: "Level 3 Verified Founder",
+      isIdentityVerified: true,
+      isCorporateEntityVerified: true,
+      isCollateralBondStaked: true,
+      stakedAmount: 2500,
+      isPatentVerified: true,
+      verificationBadge: "🛡️ Verified Founder"
+    },
     investorIntel: {
       score: 94,
       riskRating: "LOW-MEDIUM",
@@ -163,6 +174,17 @@ export const INITIAL_STARTUPS = [
         { gate: "External Startups Onboarded", measured: "1 of 5 Onboarded", target: "5 Startups", pass: false },
         { gate: "Investor Pro Subscribers", measured: "2 of 10 Converted", target: "10 Subscribers", pass: false }
       ]
+    },
+    founderVerification: {
+      status: "VERIFIED_FOUNDER",
+      level: "LEVEL_3_LAB_PASSED",
+      tierLabel: "Level 3 Verified Protocol",
+      isIdentityVerified: true,
+      isCorporateEntityVerified: true,
+      isCollateralBondStaked: true,
+      stakedAmount: 5000,
+      isPatentVerified: true,
+      verificationBadge: "🛡️ Verified Protocol"
     },
     investorIntel: {
       score: 92,

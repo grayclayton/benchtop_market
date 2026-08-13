@@ -58,7 +58,14 @@ export default function MarketCard({ startup }) {
               </span>
             </div>
           </div>
-          <span className="badge badge-cyan">{startup.category}</span>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+            <span className="badge badge-cyan">{startup.category}</span>
+            {startup.founderVerification && (
+              <span className="badge badge-purple" style={{ fontSize: '0.65rem', padding: '2px 8px' }}>
+                {startup.founderVerification.verificationBadge || '🛡️ Verified Founder'}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Story Headline (if available) */}

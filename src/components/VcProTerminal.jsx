@@ -161,7 +161,9 @@ export default function VcProTerminal() {
                   <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '10px 12px', marginBottom: '14px', fontSize: '0.75rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
                       <span style={{ fontWeight: '700', color: '#0F172A' }}>👤 {vc.team.founder} ({vc.team.role})</span>
-                      <span style={{ fontSize: '0.68rem', color: 'var(--accent-blue)', fontWeight: '600' }}>{vc.team.teamSize}</span>
+                      <span className="badge badge-purple" style={{ fontSize: '0.65rem', padding: '2px 8px' }}>
+                        {startup.founderVerification ? startup.founderVerification.tierLabel : '🛡️ Verified Founder'}
+                      </span>
                     </div>
                     <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: 1.3 }}>
                       {vc.team.bio}
