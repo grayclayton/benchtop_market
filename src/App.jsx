@@ -8,6 +8,7 @@ import TradingTerminal from './components/TradingTerminal';
 import EscrowPanel from './components/EscrowPanel';
 import HomePage from './components/HomePage';
 import VcProTerminal from './components/VcProTerminal';
+import AuthModal from './components/AuthModal';
 import OracleInspectorModal from './components/OracleInspectorModal';
 import CreateCampaignModal from './components/CreateCampaignModal';
 import { FlaskConical, ShieldCheck, TrendingUp, Award, Layers } from 'lucide-react';
@@ -73,6 +74,7 @@ function MainAppContent() {
       {/* Global Modals */}
       <OracleInspectorModal />
       <CreateCampaignModal />
+      <AuthModal />
 
       {/* Footer */}
       <footer className="glass-panel" style={{ borderRadius: 0, borderBottom: 0, borderLeft: 0, borderRight: 0, padding: '24px', marginTop: 'auto', textAlign: 'center', fontSize: '0.825rem', color: 'var(--text-muted)' }}>

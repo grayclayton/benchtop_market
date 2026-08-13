@@ -29,8 +29,15 @@ export function MarketProvider({ children }) {
       try { return JSON.parse(saved); } catch (e) { console.error(e); }
     }
     return {
-      balance: 10000.00, // $10,000 starting capital
-      positions: [], // [{ startupId, outcome: 'YES'|'NO', shares: number, avgPrice: number, investedUsd: number }]
+      isAuthenticated: true,
+      name: "Dr. Clayton Gray",
+      handle: "@clayton_gray",
+      email: "clayton@wsei-lithium.com",
+      role: "FOUNDER & INVESTOR",
+      walletAddress: "0x71C8...4e9A",
+      authMethod: "GOOGLE_WEB3",
+      balance: 10000.00, // $10,000 starting paper balance
+      positions: [],
       tradesHistory: []
     };
   });
@@ -44,10 +51,43 @@ export function MarketProvider({ children }) {
   const [activeTab, setActiveTab] = useState('HOME'); // 'HOME', 'BETTING', 'INVESTOR'
   const [inspectingCertificate, setInspectingCertificate] = useState(null);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const isVcPro = activeTab === 'INVESTOR';
   const setIsVcPro = (val) => {
     setActiveTab(val ? 'INVESTOR' : 'BETTING');
+  };
+
+  const loginUser = (authData) => {
+    setUserState(prev => ({
+      ...prev,
+      isAuthenticated: true,
+      name: authData.name || 'Anonymous Predictor',
+      handle: authData.handle || `@user_${Math.floor(Math.random()*10000)}`,
+      email: authData.email || 'user@benchtopmarket.org',
+      role: authData.role || 'BETTOR',
+      walletAddress: authData.walletAddress || `0x${Math.random().toString(16).substring(2, 10)}...${Math.random().toString(16).substring(2, 6)}`,
+      authMethod: authData.authMethod || 'EMAIL'
+    }));
+    setIsAuthModalOpen(false);
+  };
+
+  const logoutUser = () => {
+    setUserState(prev => ({
+      ...prev,
+      isAuthenticated: false,
+      name: '',
+      handle: '',
+      email: '',
+      walletAddress: ''
+    }));
+  };
+
+  const topUpBalance = (amountUsd = 5000) => {
+    setUserState(prev => ({
+      ...prev,
+      balance: prev.balance + amountUsd
+    }));
   };
 
   // Persist to LocalStorage
@@ -366,6 +406,11 @@ export function MarketProvider({ children }) {
       setInspectingCertificate,
       isCreateModalOpen,
       setIsCreateModalOpen,
+      isAuthModalOpen,
+      setIsAuthModalOpen,
+      loginUser,
+      logoutUser,
+      topUpBalance,
       executeTrade,
       addSponsorMatch,
       resolveMarket,

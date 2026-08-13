@@ -11,6 +11,7 @@ export default function Header() {
     isVcPro, 
     setIsVcPro, 
     setIsCreateModalOpen,
+    setIsAuthModalOpen,
     resetDemoState 
   } = useMarket();
 
@@ -113,8 +114,24 @@ export default function Header() {
         {/* Right Actions: User Wallet, VC Pro Switch & Launch Modal */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           
+          {/* User Account / Profile Badge */}
+          <button 
+            onClick={() => setIsAuthModalOpen(true)}
+            className="btn btn-secondary"
+            style={{ fontSize: '0.8rem', padding: '6px 12px', background: '#F8FAFC' }}
+            title="User Account & Auth Settings"
+          >
+            <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--gradient-brand)', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '0.65rem' }}>
+              {userState.name ? userState.name.substring(0, 2).toUpperCase() : 'US'}
+            </div>
+            <span>{userState.name || 'Sign In'}</span>
+          </button>
+
           {/* User Wallet Balance */}
-          <div style={{ background: 'rgba(5, 150, 105, 0.08)', border: '1px solid rgba(5, 150, 105, 0.25)', borderRadius: 'var(--radius-sm)', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div 
+            onClick={() => setIsAuthModalOpen(true)}
+            style={{ background: 'rgba(5, 150, 105, 0.08)', border: '1px solid rgba(5, 150, 105, 0.25)', borderRadius: 'var(--radius-sm)', padding: '6px 14px', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+          >
             <DollarSign size={16} color="var(--accent-emerald)" />
             <div>
               <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', display: 'block', fontWeight: '600' }}>PORTFOLIO BALANCE</span>
