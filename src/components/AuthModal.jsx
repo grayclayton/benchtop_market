@@ -170,7 +170,44 @@ export default function AuthModal() {
                 <span className="badge badge-purple">{userState.role}</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '10px', borderTop: '1px solid #E2E8F0' }}>
+              {/* Account Role Selector */}
+              <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid #E2E8F0' }}>
+                <span style={{ fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>Switch Active Persona & View</span>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '6px' }}>
+                  <button
+                    onClick={() => {
+                      loginUser({ ...userState, role: 'STARTUP FOUNDER' });
+                      setActiveTab('HOME');
+                    }}
+                    className={`btn ${userState.role === 'STARTUP FOUNDER' ? 'btn-primary' : 'btn-secondary'}`}
+                    style={{ fontSize: '0.75rem', padding: '6px', justifyContent: 'center' }}
+                  >
+                    🚀 Founder
+                  </button>
+                  <button
+                    onClick={() => {
+                      loginUser({ ...userState, role: 'INVESTOR PRO' });
+                      setActiveTab('INVESTOR');
+                    }}
+                    className={`btn ${userState.role === 'INVESTOR PRO' ? 'btn-primary' : 'btn-secondary'}`}
+                    style={{ fontSize: '0.75rem', padding: '6px', justifyContent: 'center' }}
+                  >
+                    💼 Investor
+                  </button>
+                  <button
+                    onClick={() => {
+                      loginUser({ ...userState, role: 'BETTOR / PREDICTOR' });
+                      setActiveTab('BETTING');
+                    }}
+                    className={`btn ${userState.role === 'BETTOR / PREDICTOR' ? 'btn-primary' : 'btn-secondary'}`}
+                    style={{ fontSize: '0.75rem', padding: '6px', justifyContent: 'center' }}
+                  >
+                    📈 Bettor
+                  </button>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--text-muted)', paddingTop: '10px', marginTop: '12px', borderTop: '1px solid #E2E8F0' }}>
                 <Wallet size={14} color="var(--accent-emerald)" />
                 <span>Embedded Web3 Address:</span>
                 <strong style={{ color: '#0F172A', fontFamily: 'var(--font-mono)' }}>{userState.walletAddress}</strong>
