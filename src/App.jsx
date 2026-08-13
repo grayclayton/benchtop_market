@@ -26,11 +26,11 @@ function MainAppContent() {
     const matchesCategory = activeCategory === 'ALL' || s.category === activeCategory;
     const query = searchQuery.toLowerCase().trim();
     const matchesQuery = !query || 
-      s.name.toLowerCase().includes(query) || 
-      s.ticker.toLowerCase().includes(query) || 
-      s.tagline.toLowerCase().includes(query) || 
-      (s.story && s.story.problem.toLowerCase().includes(query)) ||
-      (s.milestone && s.milestone.title.toLowerCase().includes(query));
+      (s.name && s.name.toLowerCase().includes(query)) || 
+      (s.ticker && s.ticker.toLowerCase().includes(query)) || 
+      (s.tagline && s.tagline.toLowerCase().includes(query)) || 
+      (s.story?.problem && s.story.problem.toLowerCase().includes(query)) ||
+      (s.milestone?.title && s.milestone.title.toLowerCase().includes(query));
     
     return matchesCategory && matchesQuery;
   });
