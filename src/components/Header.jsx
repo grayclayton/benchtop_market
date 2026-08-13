@@ -186,7 +186,7 @@ export default function Header() {
 
           {/* Startup Launch Button */}
           <button 
-            onClick={() => setIsCreateModalOpen(true)}
+            onClick={() => { setActiveTab('FOUNDER'); setIsCreateModalOpen(true); }}
             className="btn btn-primary"
             style={{ fontSize: '0.8rem', padding: '8px 14px' }}
           >

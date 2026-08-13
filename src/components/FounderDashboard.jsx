@@ -123,28 +123,72 @@ export default function FounderDashboard() {
         </div>
       </div>
 
-      {/* Navigation Sub-Tabs */}
-      <div style={{ display: 'flex', gap: '10px', borderBottom: '1px solid #E2E8F0', paddingBottom: '10px' }}>
+      {/* Navigation Sub-Tabs & Launch CTA */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', borderBottom: '1px solid #E2E8F0', paddingBottom: '12px' }}>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button
+            onClick={() => setActiveTabSection('CAMPAIGNS')}
+            className={`btn ${activeTabSection === 'CAMPAIGNS' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{ fontSize: '0.85rem', padding: '8px 16px' }}
+          >
+            <Rocket size={15} /> Active Milestone Campaign
+          </button>
+          <button
+            onClick={() => setActiveTabSection('MESSAGES')}
+            className={`btn ${activeTabSection === 'MESSAGES' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{ fontSize: '0.85rem', padding: '8px 16px' }}
+          >
+            <MessageSquare size={15} /> Investor Messages Inbox (2)
+          </button>
+          <button
+            onClick={() => setInspectingCertificate(myCampaign)}
+            className="btn btn-secondary"
+            style={{ fontSize: '0.85rem', padding: '8px 16px' }}
+          >
+            <ShieldCheck size={15} color="var(--accent-blue)" /> IPFS Lab Certificate
+          </button>
+        </div>
+
         <button
-          onClick={() => setActiveTabSection('CAMPAIGNS')}
-          className={`btn ${activeTabSection === 'CAMPAIGNS' ? 'btn-primary' : 'btn-secondary'}`}
-          style={{ fontSize: '0.85rem', padding: '8px 16px' }}
+          onClick={() => setIsCreateModalOpen(true)}
+          className="btn btn-primary"
+          style={{ padding: '10px 20px', fontSize: '0.85rem', background: 'var(--gradient-brand)' }}
         >
-          <Rocket size={15} /> Active Milestone Campaign
+          <PlusCircle size={16} /> List Startup Campaign ($0)
         </button>
+      </div>
+
+      {/* Primary Founder Launch Hero Banner */}
+      <div style={{
+        background: 'linear-gradient(135deg, #EFF6FF 0%, #ECFDF5 100%)',
+        border: '1px solid rgba(37, 99, 235, 0.25)',
+        borderRadius: 'var(--radius-md)',
+        padding: '24px',
+        display: 'flex',
+        alignItems: 'center',
+        justify: 'space-between',
+        flexWrap: 'wrap',
+        gap: '16px'
+      }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <span className="badge badge-cyan">Freemium Startup Portal</span>
+            <span className="badge badge-emerald">1:1 Sponsor Matching</span>
+          </div>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0F172A', marginBottom: '4px' }}>
+            Ready to Fund Your Next Hardware Milestone Test?
+          </h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
+            Define your benchmark protocol, set your lab testing cost target, and receive 1:1 sponsor grant matching with 0% equity dilution.
+          </p>
+        </div>
+
         <button
-          onClick={() => setActiveTabSection('MESSAGES')}
-          className={`btn ${activeTabSection === 'MESSAGES' ? 'btn-primary' : 'btn-secondary'}`}
-          style={{ fontSize: '0.85rem', padding: '8px 16px' }}
+          onClick={() => setIsCreateModalOpen(true)}
+          className="btn btn-primary"
+          style={{ padding: '12px 24px', fontSize: '0.9rem', fontWeight: '700' }}
         >
-          <MessageSquare size={15} /> Investor Messages Inbox (2)
-        </button>
-        <button
-          onClick={() => setInspectingCertificate(myCampaign)}
-          className="btn btn-secondary"
-          style={{ fontSize: '0.85rem', padding: '8px 16px' }}
-        >
-          <ShieldCheck size={15} color="var(--accent-blue)" /> IPFS Lab Certificate
+          <PlusCircle size={18} /> List Startup ($0) →
         </button>
       </div>
 
