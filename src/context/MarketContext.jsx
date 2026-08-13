@@ -330,7 +330,7 @@ export function MarketProvider({ children }) {
       category: newCampaignData.category,
       tagline: newCampaignData.tagline,
       story: newCampaignData.storyProblem ? {
-        headline: newCampaignData.name,
+        headline: newCampaignData.storyHeadline || newCampaignData.name,
         subtitle: newCampaignData.tagline,
         problem: newCampaignData.storyProblem,
         solution: newCampaignData.storySolution || '',
@@ -338,6 +338,16 @@ export function MarketProvider({ children }) {
         keyStats: []
       } : null,
       logoBg: 'linear-gradient(135deg, #00F2FE 0%, #9900F0 100%)',
+      founderVerification: {
+        status: 'PENDING_REVIEW',
+        level: 'LEVEL_1_KYC',
+        tierLabel: 'Pending Verification',
+        isIdentityVerified: false,
+        isCollateralBondStaked: false,
+        stakedAmount: 0,
+        isPatentVerified: false,
+        verificationBadge: '⏳ Pending Review'
+      },
       milestone: {
         title: newCampaignData.milestoneTitle,
         description: newCampaignData.milestoneDescription,
@@ -346,10 +356,10 @@ export function MarketProvider({ children }) {
         stage: 'Intake Protocol Pending'
       },
       testingLab: {
-        name: newCampaignData.labName,
-        accreditation: 'Certified Independent Benchmarking Lab',
-        location: 'Global Test Hub',
-        escrowTarget: parseFloat(newCampaignData.escrowTarget) || 20000,
+        name: newCampaignData.labName || 'Lab Assignment Pending',
+        accreditation: 'Accreditation Pending',
+        location: 'TBD',
+        escrowTarget: parseFloat(newCampaignData.escrowTarget) || 25000,
         escrowCollected: 0,
         intakeReleased: false,
         finalReleased: false,
@@ -367,22 +377,31 @@ export function MarketProvider({ children }) {
         hash: `0x${Math.random().toString(16).substring(2)}${Math.random().toString(16).substring(2)}`,
         ipfsUri: `ipfs://Qm${Math.random().toString(36).substring(2, 15)}`,
         verificationStatus: 'IN_TESTING',
-        livenessDaysRemaining: 7,
-        telemetry: [
-          { point: 1, val: 50 },
-          { point: 2, val: 75 },
-          { point: 3, val: 100 }
-        ]
+        livenessDaysRemaining: 14,
+        telemetry: []
       },
-      vcIntel: {
-        score: 90,
-        riskRating: 'MEDIUM',
-        leadInvestor: newCampaignData.leadInvestor || 'Stealth Angels',
-        founderStakedCollateral: 2500,
-        sentimentIndex: 75,
-        tags: ['New Freemium Campaign', 'Early Milestone']
+      investorIntel: {
+        score: 50,
+        riskRating: 'UNRATED',
+        leadInvestor: 'Open for Lead',
+        founderStakedCollateral: 0,
+        sentimentIndex: 50,
+        tags: [newCampaignData.category, 'Community Submission'],
+        team: {
+          founder: newCampaignData.founderName || 'Anonymous Founder',
+          role: newCampaignData.founderRole || 'Founder',
+          bio: '',
+          teamSize: newCampaignData.teamSize || 'Early Team',
+          patentsFiled: [],
+          openRound: 'Pre-Seed',
+          founderEmail: newCampaignData.founderEmail || '',
+          linkedin: newCampaignData.founderLinkedin || ''
+        }
       }
     };
+
+    // Also set vcIntel as alias for backward compatibility
+    newEntry.vcIntel = newEntry.investorIntel;
 
     setStartups(prev => [newEntry, ...prev]);
     setSelectedStartupId(newId);
