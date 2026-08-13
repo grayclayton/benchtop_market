@@ -43,6 +43,7 @@ export default function CreateCampaignModal() {
                   List Startup Milestone Campaign
                 </h3>
                 <span className="badge badge-emerald">$0 Listing Fee</span>
+                <span className="badge badge-purple">Verified Founder</span>
               </div>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                 List your milestone. Attract crowd belief and sponsor grants to fund testing.
@@ -50,9 +51,18 @@ export default function CreateCampaignModal() {
             </div>
           </div>
 
-          <button onClick={() => setIsCreateModalOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
+          <button onClick={() => setIsCreateModalOpen(false)} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}>
             <X size={20} />
           </button>
+        </div>
+
+        {/* Anti-Fraud Protection Notice */}
+        <div style={{ background: 'linear-gradient(135deg, #ECFDF5 0%, #F0F9FF 100%)', border: '1px solid rgba(5, 150, 105, 0.25)', borderRadius: '8px', padding: '12px 14px', marginBottom: '20px', fontSize: '0.78rem', color: '#0F172A', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span style={{ fontSize: '1.1rem' }}>🛡️</span>
+          <div>
+            <strong style={{ color: 'var(--accent-emerald)', display: 'block' }}>Anti-Fraud Protocol Active:</strong>
+            <span>Escrow funds route 100% directly to accredited testing labs (never founder personal accounts). Requires $2,500 staked collateral bond.</span>
+          </div>
         </div>
 
         {/* Form */}
