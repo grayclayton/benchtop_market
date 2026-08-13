@@ -10,6 +10,8 @@ export default function TradingTerminal() {
   const [tradeAmount, setTradeAmount] = useState('100');
   const [tradeFeedback, setTradeFeedback] = useState(null);
 
+  const [activeLeftView, setActiveLeftView] = useState('CHART'); // 'CHART' or 'ORDERBOOK'
+
   if (!activeStartup) return null;
 
   const currentPrice = selectedOutcome === 'YES' ? activeStartup.market.yesPrice : activeStartup.market.noPrice;
@@ -85,11 +87,82 @@ export default function TradingTerminal() {
         
         {/* Left Column: Probability History Chart & Milestone Details */}
         <div>
-          <OddsChart 
-            history={activeStartup.market.history} 
-            yesPrice={activeStartup.market.yesPrice}
-            noPrice={activeStartup.market.noPrice}
-          />
+          {/* Sub-Tabs: Chart vs Orderbook */}
+          <div style={{ display: 'flex', gap: '8px', marginBottom: '14px' }}>
+            <button
+              onClick={() => setActiveLeftView('CHART')}
+              className={`btn ${activeLeftView === 'CHART' ? 'btn-primary' : 'btn-secondary'}`}
+              style={{ fontSize: '0.78rem', padding: '6px 14px', borderRadius: '6px' }}
+            >
+              📈 Probability Chart
+            </button>
+            <button
+              onClick={() => setActiveLeftView('ORDERBOOK')}
+              className={`btn ${activeLeftView === 'ORDERBOOK' ? 'btn-primary' : 'btn-secondary'}`}
+              style={{ fontSize: '0.78rem', padding: '6px 14px', borderRadius: '6px' }}
+            >
+              📊 LMSR AMM Depth & Orderbook
+            </button>
+          </div>
+
+          {activeLeftView === 'CHART' ? (
+            <OddsChart 
+              history={activeStartup.market.history} 
+              yesPrice={activeStartup.market.yesPrice}
+              noPrice={activeStartup.market.noPrice}
+            />
+          ) : (
+            <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: 'var(--radius-md)', padding: '20px', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                <h4 style={{ fontSize: '1rem', fontWeight: '800', color: '#0F172A' }}>
+                  LMSR Liquidity Depth & Orderbook (b = 2,500)
+                </h4>
+                <span className="badge badge-cyan">Automated Market Maker</span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px', fontSize: '0.78rem' }}>
+                <div style={{ background: '#ECFDF5', border: '1px solid rgba(5, 150, 105, 0.25)', padding: '10px', borderRadius: '8px' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'block' }}>YES BID / ASK SPREAD</span>
+                  <strong style={{ color: 'var(--accent-emerald)', fontFamily: 'var(--font-mono)', fontSize: '0.95rem' }}>
+                    Bid: ${(activeStartup.market.yesPrice - 0.01).toFixed(2)} | Ask: ${activeStartup.market.yesPrice.toFixed(2)}
+                  </strong>
+                </div>
+
+                <div style={{ background: '#FFF1F2', border: '1px solid rgba(225, 29, 72, 0.25)', padding: '10px', borderRadius: '8px' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'block' }}>NO BID / ASK SPREAD</span>
+                  <strong style={{ color: 'var(--accent-crimson)', fontFamily: 'var(--font-mono)', fontSize: '0.95rem' }}>
+                    Bid: ${(activeStartup.market.noPrice - 0.01).toFixed(2)} | Ask: ${activeStartup.market.noPrice.toFixed(2)}
+                  </strong>
+                </div>
+              </div>
+
+              {/* Depth Visualizer */}
+              <div style={{ fontSize: '0.75rem' }}>
+                <span style={{ color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Liquidity Pool Depth (b = 2,500)</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--yes-color)', fontWeight: '700', marginBottom: '2px' }}>
+                      <span>YES Reserve Depth</span>
+                      <span>${(activeStartup.market.totalVolume * 0.78).toLocaleString()} USD</span>
+                    </div>
+                    <div style={{ width: '100%', height: '8px', background: '#E2E8F0', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div style={{ width: '78%', height: '100%', background: 'var(--gradient-yes)' }} />
+                    </div>
+                  </div>
+
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--no-color)', fontWeight: '700', marginBottom: '2px' }}>
+                      <span>NO Reserve Depth</span>
+                      <span>${(activeStartup.market.totalVolume * 0.22).toLocaleString()} USD</span>
+                    </div>
+                    <div style={{ width: '100%', height: '8px', background: '#E2E8F0', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div style={{ width: '22%', height: '100%', background: 'var(--gradient-no)' }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Startup Story */}
           {activeStartup.story && (

@@ -6,6 +6,8 @@ export default function OracleInspectorModal() {
   const { inspectingCertificate, setInspectingCertificate, resolveMarket } = useMarket();
 
   const [resolutionNotice, setResolutionNotice] = useState(null);
+  const [isSimulatingStream, setIsSimulatingStream] = useState(false);
+  const [streamProgress, setStreamProgress] = useState(0); // 0 to 200 cycles
 
   if (!inspectingCertificate) return null;
 
@@ -13,13 +15,28 @@ export default function OracleInspectorModal() {
   const cert = startup.certificate;
   const lab = startup.testingLab;
 
+  const runLiveSimulation = () => {
+    setIsSimulatingStream(true);
+    setStreamProgress(0);
+    let cycle = 0;
+    const interval = setInterval(() => {
+      cycle += 10;
+      setStreamProgress(cycle);
+      if (cycle >= 200) {
+        clearInterval(interval);
+        setIsSimulatingStream(false);
+        handleResolve('YES');
+      }
+    }, 250);
+  };
+
   const handleResolve = (outcome) => {
     resolveMarket(startup.id, outcome);
     setResolutionNotice(`Simulated Oracle Resolution: Market resolved to ${outcome}! Winner payouts & lab escrow unlocked.`);
     setTimeout(() => {
       setResolutionNotice(null);
       setInspectingCertificate(null);
-    }, 2500);
+    }, 3000);
   };
 
   return (
@@ -139,6 +156,36 @@ export default function OracleInspectorModal() {
           <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '14px' }}>
             Simulate published lab benchmark output to resolve the prediction market and release winner payouts ($1.00/share) & remaining 80% lab escrow.
           </p>
+
+          {/* Live Streaming Simulation Button */}
+          <div style={{ marginBottom: '14px' }}>
+            <button
+              onClick={runLiveSimulation}
+              disabled={isSimulatingStream}
+              className="btn btn-primary"
+              style={{
+                width: '100%',
+                padding: '12px',
+                fontSize: '0.875rem',
+                background: isSimulatingStream ? '#94A3B8' : 'linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)',
+                fontWeight: '700'
+              }}
+            >
+              {isSimulatingStream ? `▶ Streaming Cycle ${streamProgress} / 200...` : '▶ Run Live Lab Test Simulation (200 Cycles)'}
+            </button>
+
+            {isSimulatingStream && (
+              <div style={{ marginTop: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.725rem', color: 'var(--accent-purple)', fontWeight: '700', marginBottom: '4px' }}>
+                  <span>Simulating ICP-OES Telemetry Stream...</span>
+                  <span>{streamProgress} / 200 Cycles</span>
+                </div>
+                <div style={{ width: '100%', height: '6px', background: '#E2E8F0', borderRadius: '3px', overflow: 'hidden' }}>
+                  <div style={{ width: `${(streamProgress / 200) * 100}%`, height: '100%', background: 'linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)', transition: 'width 0.25s linear' }} />
+                </div>
+              </div>
+            )}
+          </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <button 

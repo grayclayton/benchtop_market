@@ -3,7 +3,7 @@ import { useMarket } from '../context/MarketContext';
 import { Briefcase, Star, Mail } from 'lucide-react';
 
 export default function VcProTerminal() {
-  const { startups, setSelectedStartupId, setIsVcPro } = useMarket();
+  const { startups, setSelectedStartupId, setIsVcPro, openInvestorChat } = useMarket();
 
   return (
     <div className="glass-panel" style={{ padding: '28px', marginBottom: '28px', background: '#FFFFFF', border: '1px solid rgba(124, 58, 237, 0.3)', boxShadow: '0 4px 20px rgba(124, 58, 237, 0.08)' }}>
@@ -195,7 +195,7 @@ export default function VcProTerminal() {
                   View Market
                 </button>
                 <button
-                  onClick={() => alert(`Direct Founder Message Channel initialized for ${vc.team?.founder || startup.name} (${vc.team?.founderEmail || 'contact@startup.com'}). Sending VC inquiry...`)}
+                  onClick={() => openInvestorChat(startup)}
                   className="btn btn-primary"
                   style={{ flex: 1, fontSize: '0.75rem', padding: '6px', background: 'var(--gradient-brand)' }}
                 >

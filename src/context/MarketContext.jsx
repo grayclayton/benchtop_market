@@ -48,10 +48,27 @@ export function MarketProvider({ children }) {
   // Active view states
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [selectedStartupId, setSelectedStartupId] = useState('wsei-lithium-bench-01');
-  const [activeTab, setActiveTab] = useState('HOME'); // 'HOME', 'BETTING', 'INVESTOR'
+  const [activeTab, setActiveTab] = useState('HOME'); // 'HOME', 'BETTING', 'INVESTOR', 'FOUNDER', 'PREDICTOR'
   const [inspectingCertificate, setInspectingCertificate] = useState(null);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  
+  // New Modal States
+  const [isInvestorChatOpen, setIsInvestorChatOpen] = useState(false);
+  const [activeStartupForChat, setActiveStartupForChat] = useState(null);
+  const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false);
+  const [activeStartupForSponsor, setActiveStartupForSponsor] = useState(null);
+  const [isLabPortalOpen, setIsLabPortalOpen] = useState(false);
+
+  const openInvestorChat = (startup) => {
+    setActiveStartupForChat(startup);
+    setIsInvestorChatOpen(true);
+  };
+
+  const openSponsorModal = (startup) => {
+    setActiveStartupForSponsor(startup);
+    setIsSponsorModalOpen(true);
+  };
 
   const isVcPro = activeTab === 'INVESTOR';
   const setIsVcPro = (val) => {
@@ -408,6 +425,16 @@ export function MarketProvider({ children }) {
       setIsCreateModalOpen,
       isAuthModalOpen,
       setIsAuthModalOpen,
+      isInvestorChatOpen,
+      setIsInvestorChatOpen,
+      activeStartupForChat,
+      openInvestorChat,
+      isSponsorModalOpen,
+      setIsSponsorModalOpen,
+      activeStartupForSponsor,
+      openSponsorModal,
+      isLabPortalOpen,
+      setIsLabPortalOpen,
       loginUser,
       logoutUser,
       topUpBalance,

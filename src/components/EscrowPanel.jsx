@@ -3,7 +3,7 @@ import { useMarket } from '../context/MarketContext';
 import { Award, ShieldCheck, DollarSign, PlusCircle, CheckCircle2, Lock, Landmark, UserCheck } from 'lucide-react';
 
 export default function EscrowPanel() {
-  const { activeStartup, addSponsorMatch } = useMarket();
+  const { activeStartup, addSponsorMatch, openSponsorModal, setIsLabPortalOpen } = useMarket();
 
   const [sponsorName, setSponsorName] = useState('');
   const [matchAmount, setMatchAmount] = useState('1000');
@@ -42,9 +42,22 @@ export default function EscrowPanel() {
           </div>
         </div>
 
-        <span className="badge badge-emerald">
-          <ShieldCheck size={14} /> Sponsor + Trade Funded
-        </span>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button
+            onClick={() => openSponsorModal(activeStartup)}
+            className="btn btn-primary"
+            style={{ fontSize: '0.8rem', padding: '6px 12px', background: 'var(--gradient-yes)' }}
+          >
+            <PlusCircle size={14} /> Pledge Grant Match
+          </button>
+          <button
+            onClick={() => setIsLabPortalOpen(true)}
+            className="btn btn-secondary"
+            style={{ fontSize: '0.8rem', padding: '6px 12px' }}
+          >
+            <Award size={14} color="var(--accent-blue)" /> Lab Network Directory
+          </button>
+        </div>
       </div>
 
       {/* Grid: Lab Info & Progress (Left) + Sponsor Matching Widget (Right) */}

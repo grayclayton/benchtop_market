@@ -11,6 +11,9 @@ import VcProTerminal from './components/VcProTerminal';
 import FounderDashboard from './components/FounderDashboard';
 import PredictorDashboard from './components/PredictorDashboard';
 import AuthModal from './components/AuthModal';
+import InvestorChatModal from './components/InvestorChatModal';
+import SponsorPledgeModal from './components/SponsorPledgeModal';
+import LabPortalModal from './components/LabPortalModal';
 import OracleInspectorModal from './components/OracleInspectorModal';
 import CreateCampaignModal from './components/CreateCampaignModal';
 import { FlaskConical, ShieldCheck, TrendingUp, Award, Layers } from 'lucide-react';
@@ -81,6 +84,9 @@ function MainAppContent() {
       <OracleInspectorModal />
       <CreateCampaignModal />
       <AuthModal />
+      <InvestorChatModal />
+      <SponsorPledgeModal />
+      <LabPortalModal />
 
       {/* Footer */}
       <footer className="glass-panel" style={{ borderRadius: 0, borderBottom: 0, borderLeft: 0, borderRight: 0, padding: '24px', marginTop: 'auto', textAlign: 'center', fontSize: '0.825rem', color: 'var(--text-muted)' }}>
