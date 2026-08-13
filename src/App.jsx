@@ -19,12 +19,20 @@ import CreateCampaignModal from './components/CreateCampaignModal';
 import { FlaskConical, ShieldCheck, TrendingUp, Award, Layers } from 'lucide-react';
 
 function MainAppContent() {
-  const { startups, activeCategory, activeTab } = useMarket();
+  const { startups, activeCategory, searchQuery, activeTab } = useMarket();
 
-  // Filter startups by category
+  // Filter startups by category and real-time search query
   const filteredStartups = startups.filter(s => {
-    if (activeCategory === 'ALL') return true;
-    return s.category === activeCategory;
+    const matchesCategory = activeCategory === 'ALL' || s.category === activeCategory;
+    const query = searchQuery.toLowerCase().trim();
+    const matchesQuery = !query || 
+      s.name.toLowerCase().includes(query) || 
+      s.ticker.toLowerCase().includes(query) || 
+      s.tagline.toLowerCase().includes(query) || 
+      (s.story && s.story.problem.toLowerCase().includes(query)) ||
+      (s.milestone && s.milestone.title.toLowerCase().includes(query));
+    
+    return matchesCategory && matchesQuery;
   });
 
   return (

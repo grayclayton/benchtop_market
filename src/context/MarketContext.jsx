@@ -47,6 +47,7 @@ export function MarketProvider({ children }) {
 
   // Active view states
   const [activeCategory, setActiveCategory] = useState('ALL');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedStartupId, setSelectedStartupId] = useState('wsei-lithium-bench-01');
   const [activeTab, setActiveTab] = useState('HOME'); // 'HOME', 'BETTING', 'INVESTOR', 'FOUNDER', 'PREDICTOR'
   const [inspectingCertificate, setInspectingCertificate] = useState(null);
@@ -410,6 +411,8 @@ export function MarketProvider({ children }) {
       platformStats,
       activeCategory,
       setActiveCategory,
+      searchQuery,
+      setSearchQuery,
       selectedStartupId,
       setSelectedStartupId,
       activeStartup,
