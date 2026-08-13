@@ -104,19 +104,19 @@ export default function Header() {
           </button>
 
           <button
-            onClick={() => setActiveTab('BETTOR')}
-            className={`btn ${activeTab === 'BETTOR' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setActiveTab('PREDICTOR')}
+            className={`btn ${activeTab === 'PREDICTOR' ? 'btn-primary' : 'btn-secondary'}`}
             style={{
               fontSize: '0.8rem',
               padding: '6px 14px',
               borderRadius: 'var(--radius-full)',
-              border: activeTab === 'BETTOR' ? 'none' : 'transparent',
-              background: activeTab === 'BETTOR' ? 'var(--gradient-yes)' : 'transparent',
-              color: activeTab === 'BETTOR' ? '#FFF' : '#0F172A',
-              fontWeight: activeTab === 'BETTOR' ? '700' : '600'
+              border: activeTab === 'PREDICTOR' ? 'none' : 'transparent',
+              background: activeTab === 'PREDICTOR' ? 'var(--gradient-yes)' : 'transparent',
+              color: activeTab === 'PREDICTOR' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'PREDICTOR' ? '700' : '600'
             }}
           >
-            📊 Bettor Portfolio
+            📊 Predictor Portfolio
           </button>
         </nav>
 

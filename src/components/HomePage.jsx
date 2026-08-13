@@ -153,7 +153,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#0F172A' }}>Prediction Market</h3>
-                <span style={{ fontSize: '0.72rem', color: 'var(--accent-blue)', fontWeight: '600' }}>For Bettors & Domain Experts</span>
+                <span style={{ fontSize: '0.72rem', color: 'var(--accent-blue)', fontWeight: '600' }}>For Predictors & Technical Analysts</span>
               </div>
             </div>
 

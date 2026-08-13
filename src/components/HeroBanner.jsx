@@ -57,7 +57,7 @@ export default function HeroBanner() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#F8FAFC', padding: '8px 12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <TrendingUp size={16} color="var(--accent-blue)" />
-                <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#0F172A' }}>Winning Bettors Pool</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#0F172A' }}>Winning Predictors Pool</span>
               </div>
               <span style={{ fontSize: '0.9rem', fontWeight: '800', fontFamily: 'var(--font-mono)', color: '#0F172A' }}>97.0%</span>
             </div>

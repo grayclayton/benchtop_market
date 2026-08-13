@@ -196,13 +196,13 @@ export default function AuthModal() {
                   </button>
                   <button
                     onClick={() => {
-                      loginUser({ ...userState, role: 'BETTOR / PREDICTOR' });
-                      setActiveTab('BETTING');
+                      loginUser({ ...userState, role: 'PREDICTOR / ANALYST' });
+                      setActiveTab('PREDICTOR');
                     }}
-                    className={`btn ${userState.role === 'BETTOR / PREDICTOR' ? 'btn-primary' : 'btn-secondary'}`}
+                    className={`btn ${userState.role === 'PREDICTOR / ANALYST' ? 'btn-primary' : 'btn-secondary'}`}
                     style={{ fontSize: '0.75rem', padding: '6px', justifyContent: 'center' }}
                   >
-                    📈 Bettor
+                    📈 Predictor
                   </button>
                 </div>
               </div>
@@ -323,19 +323,19 @@ export default function AuthModal() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setRoleInput('BETTOR / PREDICTOR')}
+                  onClick={() => setRoleInput('PREDICTOR / ANALYST')}
                   style={{
                     padding: '8px',
                     borderRadius: '6px',
-                    border: roleInput === 'BETTOR / PREDICTOR' ? '2px solid var(--accent-emerald)' : '1px solid #CBD5E1',
-                    background: roleInput === 'BETTOR / PREDICTOR' ? 'rgba(5, 150, 105, 0.08)' : '#F8FAFC',
+                    border: roleInput === 'PREDICTOR / ANALYST' ? '2px solid var(--accent-emerald)' : '1px solid #CBD5E1',
+                    background: roleInput === 'PREDICTOR / ANALYST' ? 'rgba(5, 150, 105, 0.08)' : '#F8FAFC',
                     fontSize: '0.75rem',
                     fontWeight: '700',
                     color: '#0F172A',
                     cursor: 'pointer'
                   }}
                 >
-                  Bettor
+                  Predictor
                 </button>
               </div>
             </div>

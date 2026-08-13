@@ -9,7 +9,7 @@ import EscrowPanel from './components/EscrowPanel';
 import HomePage from './components/HomePage';
 import VcProTerminal from './components/VcProTerminal';
 import FounderDashboard from './components/FounderDashboard';
-import BettorDashboard from './components/BettorDashboard';
+import PredictorDashboard from './components/PredictorDashboard';
 import AuthModal from './components/AuthModal';
 import OracleInspectorModal from './components/OracleInspectorModal';
 import CreateCampaignModal from './components/CreateCampaignModal';
@@ -39,7 +39,7 @@ function MainAppContent() {
 
         {activeTab === 'INVESTOR' && <VcProTerminal />}
 
-        {activeTab === 'BETTOR' && <BettorDashboard />}
+        {activeTab === 'PREDICTOR' && <PredictorDashboard />}
 
         {activeTab === 'BETTING' && (
           <>
