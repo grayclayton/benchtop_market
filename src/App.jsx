@@ -8,6 +8,8 @@ import TradingTerminal from './components/TradingTerminal';
 import EscrowPanel from './components/EscrowPanel';
 import HomePage from './components/HomePage';
 import VcProTerminal from './components/VcProTerminal';
+import FounderDashboard from './components/FounderDashboard';
+import BettorDashboard from './components/BettorDashboard';
 import AuthModal from './components/AuthModal';
 import OracleInspectorModal from './components/OracleInspectorModal';
 import CreateCampaignModal from './components/CreateCampaignModal';
@@ -33,7 +35,11 @@ function MainAppContent() {
         
         {activeTab === 'HOME' && <HomePage />}
 
+        {activeTab === 'FOUNDER' && <FounderDashboard />}
+
         {activeTab === 'INVESTOR' && <VcProTerminal />}
+
+        {activeTab === 'BETTOR' && <BettorDashboard />}
 
         {activeTab === 'BETTING' && (
           <>

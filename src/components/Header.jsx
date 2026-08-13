@@ -72,6 +72,22 @@ export default function Header() {
           </button>
 
           <button
+            onClick={() => setActiveTab('FOUNDER')}
+            className={`btn ${activeTab === 'FOUNDER' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-full)',
+              border: activeTab === 'FOUNDER' ? 'none' : 'transparent',
+              background: activeTab === 'FOUNDER' ? 'var(--gradient-brand)' : 'transparent',
+              color: activeTab === 'FOUNDER' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'FOUNDER' ? '700' : '600'
+            }}
+          >
+            🚀 Founder Portal
+          </button>
+
+          <button
             onClick={() => setActiveTab('INVESTOR')}
             className={`btn ${activeTab === 'INVESTOR' ? 'btn-primary' : 'btn-secondary'}`}
             style={{
@@ -85,6 +101,22 @@ export default function Header() {
             }}
           >
             <Briefcase size={14} /> Investor Pro
+          </button>
+
+          <button
+            onClick={() => setActiveTab('BETTOR')}
+            className={`btn ${activeTab === 'BETTOR' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 14px',
+              borderRadius: 'var(--radius-full)',
+              border: activeTab === 'BETTOR' ? 'none' : 'transparent',
+              background: activeTab === 'BETTOR' ? 'var(--gradient-yes)' : 'transparent',
+              color: activeTab === 'BETTOR' ? '#FFF' : '#0F172A',
+              fontWeight: activeTab === 'BETTOR' ? '700' : '600'
+            }}
+          >
+            📊 Bettor Portfolio
           </button>
         </nav>
 
